@@ -317,10 +317,8 @@ writeAssemblyCode(
         uprv_strcpy(outFilePath, buffer.chars);
     }
 
-#if defined (WINDOWS_WITH_GNUC) && U_PLATFORM != U_PF_CYGWIN
     /* Need to fix the file separator character when using MinGW. */
     swapFileSepChar(outFilePath, U_FILE_SEP_CHAR, '/');
-#endif
 
     if(optEntryPoint != NULL) {
         uprv_strcpy(entry, optEntryPoint);
