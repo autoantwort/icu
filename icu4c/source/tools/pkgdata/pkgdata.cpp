@@ -1146,7 +1146,7 @@ static int32_t pkg_installLibrary(const char *installDir, const char *targetDir,
     result = runCommand(cmd);
 
     if (result != 0) {
-        fprintf(stderr, "Error installing library. Failed command: %s\n", cmd);
+        fprintf(stderr, "%d: Error installing library. Failed command: %s\n", __LINE__, cmd);
         return result;
     }
 
@@ -1160,7 +1160,7 @@ static int32_t pkg_installLibrary(const char *installDir, const char *targetDir,
     result = runCommand(cmd);
 
     if (result != 0) {
-        fprintf(stderr, "Error installing library. Failed command: %s\n", cmd);
+        fprintf(stderr, "%d: Error installing library. Failed command: %s\n", __LINE__, cmd);
         return result;
     }
 #elif U_PLATFORM == U_PF_CYGWIN
@@ -1173,7 +1173,7 @@ static int32_t pkg_installLibrary(const char *installDir, const char *targetDir,
     result = runCommand(cmd);
 
     if (result != 0) {
-        fprintf(stderr, "Error installing library. Failed command: %s\n", cmd);
+        fprintf(stderr, "%d: Error installing library. Failed command: %s\n", __LINE__, cmd);
         return result;
     }
 
